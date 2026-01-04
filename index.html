@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generative Art Canvas | Kova Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+</head>
+<body>
+    <!-- Mobile Menu Toggle -->
+    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+        <span class="hamburger"></span>
+    </button>
+
+    <!-- Sidebar Control Panel -->
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h1>Generative Art</h1>
+            <p class="subtitle">Interactive Canvas</p>
+        </div>
+
+        <div class="controls">
+            <!-- Pattern Type -->
+            <div class="control-group">
+                <label for="pattern-select">Pattern Type</label>
+                <select id="pattern-select">
+                    <option value="flow">Flow Fields</option>
+                    <option value="geometric">Geometric</option>
+                    <option value="particles">Particles</option>
+                </select>
+            </div>
+
+            <!-- Color Palette -->
+            <div class="control-group">
+                <label for="palette-select">Color Palette</label>
+                <select id="palette-select">
+                    <option value="neon">Purple Neon</option>
+                    <option value="sunset">Sunset Glow</option>
+                    <option value="ocean">Ocean Depths</option>
+                    <option value="forest">Forest Magic</option>
+                </select>
+            </div>
+
+            <!-- Speed Slider -->
+            <div class="control-group">
+                <label for="speed-slider">
+                    Speed: <span id="speed-value">1.0</span>
+                </label>
+                <input type="range" id="speed-slider" min="0.1" max="5" step="0.1" value="1">
+            </div>
+
+            <!-- Complexity Slider -->
+            <div class="control-group">
+                <label for="complexity-slider">
+                    Complexity: <span id="complexity-value">5</span>
+                </label>
+                <input type="range" id="complexity-slider" min="1" max="10" step="1" value="5">
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="button-group">
+                <button id="randomize-btn" class="btn btn-primary">
+                    <span class="btn-icon">⟳</span> Randomize
+                </button>
+                <button id="save-btn" class="btn btn-secondary">
+                    <span class="btn-icon">⬇</span> Save PNG
+                </button>
+            </div>
+        </div>
+
+        <footer class="sidebar-footer">
+            <p>Click canvas to interact</p>
+        </footer>
+    </aside>
+
+    <!-- Overlay for mobile -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- p5.js Canvas Container -->
+    <main id="canvas-container"></main>
+
+    <script src="sketch.js"></script>
+</body>
+</html>
